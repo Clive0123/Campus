@@ -30,7 +30,29 @@ namespace CampusService
         [OperationContract]
         Product GetProductByUserEmail(string email);
 
+      [OperationContract]
+        int PlaceBid(int productId, int userId, decimal bidAmount);
+		
+		[OperationContract]
+		int GetProductsSoldCount(DateTime startDate, DateTime endDate);
 
+		[OperationContract]
+		int GetTotalStockCount();
+
+		[OperationContract]
+		int GetDailyRegistrations(DateTime date);
+
+		[OperationContract]
+		decimal GetTotalRevenue(DateTime startDate, DateTime endDate);
+
+		[OperationContract]
+		DataTable GetSalesByCategory(DateTime startDate, DateTime endDate);
+
+		[OperationContract]
+		DataTable GetLowStockProducts(int threshold);
+
+		[OperationContract]
+		DataTable GetStockByCategory();
 
 }
 }
