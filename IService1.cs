@@ -53,6 +53,35 @@ namespace CampusService
 
 		[OperationContract]
 		DataTable GetStockByCategory();
+		[OperationContract]
+        int AddToCart(int userId, int productId, int quantity);
 
+        [OperationContract]
+        List<Cart> GetUserCart(int userId);
+
+        [OperationContract]
+        int RemoveFromCart(int cartId);
+
+        [OperationContract]
+        int CreateOrder(int userId, decimal totalAmount);
+
+        [OperationContract]
+        int AddOrderItem(int orderId, int productId, int quantity, decimal price);
+
+        [OperationContract]
+        List<Order> GetUserOrders(int userId);
+
+        // Admin methods
+        [OperationContract]
+        List<Product> GetProductsByUserId(int userId);
+
+        [OperationContract]
+        List<Product> GetProductsForApproval();
+
+        [OperationContract]
+        int ApproveProduct(int productId);
+
+        [OperationContract]
+        int RejectProduct(int productId);
 }
 }
